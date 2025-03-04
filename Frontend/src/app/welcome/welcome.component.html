@@ -1,0 +1,22 @@
+
+<div class="constainer alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{errorMessage}}
+  </div>
+
+<div class="container">
+<h1>Hello!</h1>
+<p>welcome {{name}}! to our awesome app!</p>
+</div>
+
+<div>
+you can manage todos <a routerLink="/todos">here</a> 
+</div>
+
+<div class="container">
+    <button (click)="getWelcomeMessage()" class="btn btn-success">Get Welcome Message</button>
+</div>
+
+<div class="container" *ngIf="welcomeMessage">
+    <H2>Your customized message!</H2>
+    {{welcomeMessage}}
+</div>

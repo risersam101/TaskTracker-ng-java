@@ -1,0 +1,18 @@
+<h1>Task</h1>
+
+<div class="container">
+    <div class="alert alert-danger" *ngIf="todoForm.dirty&&todoForm.invalid&&descValid.invalid">Description should be more than 5 characters !</div>
+    <div class="alert alert-danger" *ngIf="todoForm.dirty&&todoForm.invalid&&dateValid.invalid">Enter a valid Date!</div>
+    <form (ngSubmit)="!todoForm.invalid && saveTask()" #todoForm = "ngForm">
+    <fieldset class="form-group">
+        <label>Description</label>
+    <input type="text" class="form-control" name="description" #descValid="ngModel" required [(ngModel)]="todo.description" minlength="5">
+</fieldset>
+<fieldset class="form-group">
+    <label>Target date</label>
+    <input type="date" class="form-control" name="targetDate" #dateValid="ngModel" required [ngModel]="todo.targetDate| date:'yyyy-MM-dd'"
+    (ngModelChange)="todo.targetDate = $event">
+</fieldset>
+<button class="btn btn-success" type="submit">Save</button>
+</form>
+</div>

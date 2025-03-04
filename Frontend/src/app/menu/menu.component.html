@@ -1,0 +1,15 @@
+<header>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+        <div><a href="/welcome/heloo" class="navbar-brand">
+            TaskTracker!</a></div>
+         <ul class="navbar-nav mr-auto">
+                <li><a *ngIf="hardCodedAuthServ.isUserLoggedIn()" routerLink ="/welcome/inherit" class="nav-link">Home</a></li>
+                <li><a *ngIf="hardCodedAuthServ.isUserLoggedIn()" routerLink="/todos" class="nav-link">Tasks</a></li>
+         </ul>
+         <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a *ngIf="!hardCodedAuthServ.isUserLoggedIn()" routerLink ="/login" class="nav-link">Login</a></li>
+            <li><a *ngIf="hardCodedAuthServ.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
+     </ul>
+    </nav>
+
+</header>
